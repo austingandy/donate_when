@@ -1,5 +1,7 @@
 # Todos #
-* Add error-handling to twitter_search_results.pug
+* Expand lookback of twitter searches
+* Add functionality to include/exclude retweets from search results
+* Any way to fix load time of tweets rendering? They take ages
 * Display all tweets not just the first result in twitter_search_results.pug
 * Add some username validation to twitter search
 * Figure out a weather API to use
