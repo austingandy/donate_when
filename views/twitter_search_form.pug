@@ -11,6 +11,9 @@ block content
       p 
         label(for='phrase') Phrase: 
         input#name.form-control(type='text', placeholder='what phrase are you looking for?' name='phrase' value=(undefined===phrase ? '' : phrase))
+      p 
+        label(for='include_rt') Include RTs?
+        input#name.form-control(type='checkbox' name='include_rt')
     button.btn.btn-primary(type='submit') Submit
 
   if errors

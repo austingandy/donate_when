@@ -21,11 +21,14 @@ class TwitterTrigger extends TriggerController {
      */
     search_results_get(req, res, next) {
         var username = req.query.username.replace('@', '');
-        var phrase = req.query.phrase
-        var query = "\"" + phrase + "\" from:@" + username
+        var phrase = req.query.phrase;
+        var include_rt = (undefined !== req.query.include_rt && req.query.include_rt === 'on') ? true : false;
+        var query = "\"" + phrase + "\" from:@" + username;
+        if (!include_rt) {
+            query += " " + "-filter:retweets"
+        }
         client.get('search/tweets', {q:query, results:10}, function(error, tweets, response) {
             if(error) next(error);
-            console.log(tweets);
             res.render('twitter_search_results', {title: 'Twitter Results', username: username, tweets: tweets});
         });
     }
