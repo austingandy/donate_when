@@ -29,7 +29,7 @@ class TwitterTrigger extends TriggerController {
         }
         client.get('search/tweets', {q:query, results:10}, function(error, tweets, response) {
             if(error) next(error);
-            res.render('twitter_search_results', {title: 'Twitter Results', username: username, tweets: tweets});
+            res.render('twitter_search_results', {title: 'Twitter Results', username: username, tweets: tweets, include_rt: include_rt});
         });
     }
 };

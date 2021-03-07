@@ -8,5 +8,6 @@
 * Figure out user creation & sign-in flows
 * Allow users to save triggers
 * Allow users to publish triggers
+* Figure out webhooks for weather and twitter integrations
 * Allow users to view other user-created triggers (including aggregate statistics about them)
 * Allow users to subscribe to triggers (subscription = $ amount, charity committed to, donation ceiling over some time period)
