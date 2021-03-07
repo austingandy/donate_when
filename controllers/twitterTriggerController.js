@@ -22,7 +22,6 @@ class TwitterTrigger extends TriggerController {
     search_results_get(req, res, next) {
         var username = req.query.username.replace('@', '');
         var phrase = req.query.phrase
-        // NOTE: query builder doesn't work yet. need to figure out.
         var query = "\"" + phrase + "\" from:@" + username
         client.get('search/tweets', {q:query, results:10}, function(error, tweets, response) {
             if(error) next(error);
