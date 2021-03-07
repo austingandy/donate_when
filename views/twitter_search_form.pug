@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='GET' action='/twitter_search_results/')
+    div.form-group
+      p 
+        label(for='username') Twitter User Name:
+        input#name.form-control(type='text', placeholder='@ included please' name='username' value=(undefined===username ? '' : genre.name))
+      p 
+        label(for='phrase') Phrase: 
+        input#name.form-control(type='text', placeholder='what phrase are you looking for?' name='phrase' value=(undefined===phrase ? '' : phrase))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

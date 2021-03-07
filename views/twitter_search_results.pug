@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 #{title}
+  h2 Username is @#{username}
+
+  | <blockquote class="twitter-tweet"><p lang="en" dir="ltr">#{tweets.statuses[0].text}<a href="https://twitter.com/#{username}/status/#{tweets.statuses[0].id_str}.?ref_src=twsrc%5Etfw"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
